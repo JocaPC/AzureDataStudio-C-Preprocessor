@@ -23,12 +23,6 @@ select @@version;
 #define COUNTIF(condition) SUM(CASE WHEN condition THEN 1 ELSE 0 END)
 #define SUMIF(column,condition)  SUM(CASE WHEN condition THEN column ELSE 0 END)
 #define AVGIF(column,condition)  AVG(CASE WHEN condition THEN column END)
-#define PREV(column,offset)  LAG(column, offset, NULL) OVER (ORDER BY column) 
-#define NEXT(column,offset)  LEAD(column, offset, NULL) OVER (ORDER BY column) 
-#define PREVBY(column,offset,order)  LAG(column, offset, NULL) OVER (ORDER BY order) 
-#define NEXTBY(column,offset,order)  LEAD(column, offset, NULL) OVER (ORDER BY order) 
-#define PREVBYON(column,offset,order,partition)  LAG(column, offset, NULL) OVER (PARTITION BY partition ORDER BY order) 
-#define NEXTBYON(column,offset,order,partition)  LEAD(column, offset, NULL) OVER (PARTITION BY partition ORDER BY order) 
 
 select  COUNTIF(database_id < 100),
         SUMIF(database_id, database_id < 100),
