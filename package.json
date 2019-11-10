@@ -2,7 +2,7 @@
     "name": "c-preprocesor",
     "displayName": "C-Preprocessor",
     "description": "Enables you to define C-style macros in your T-SQL script.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/jocapc/azuredatastudio-preprocessor"
@@ -24,13 +24,13 @@
         "commands": [
             {
                 "command": "run.preprocessor",
-                "title": "Run preprocessor"
+                "title": "Run with C-preprocessor"
             }
         ],
         "keybindings": [
             {
                 "command": "run.preprocessor",
-                "key": "Ctrl+Shift+r p"
+                "key": "Ctrl+Alt+f5"
             }
         ]
     },
@@ -53,6 +53,7 @@
     },
     "dependencies": {
         "azuredatastudio-dmpwrapper": "^1.0.1",
-        "c-preprocessor": "^0.2.12"
+        "c-preprocessor": "^0.2.12",
+        "diff": ">=3.5.0"
     }
 }
