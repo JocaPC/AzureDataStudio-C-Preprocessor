@@ -4,7 +4,7 @@ This extention enables your to create C-style preprocessor directives that will 
 You can download [VSIX and install it in your Azure Data Studio](c-preprocesor-0.1.1.vsix).
 
 ## Usage
-1. Write a T-SQL query that has some C-stype macro definitions, for example:
+1. Write a T-SQL query that has some C-style macro definitions, for example:
 
 ```
 #define DB
@@ -14,6 +14,8 @@ select * from sys.databases;
 select @@version;
 #endif
 ```
+
+This extension will evaluate #ifdef/#else conditions and execute first or second script.
 
 2. Use **Ctrl+Alt+F5** to run the pre-processed query. This command will pre-process your query and execute it on the current active connection.
 
