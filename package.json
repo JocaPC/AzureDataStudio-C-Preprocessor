@@ -1,0 +1,58 @@
+{
+    "name": "c-preprocesor",
+    "displayName": "C-Preprocessor",
+    "description": "Enables you to define C-style macros in your T-SQL script.",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jocapc/azuredatastudio-preprocessor"
+    },
+    "icon": "images/sqlserver.png",
+    "publisher": "jocapc",
+    "engines": {
+        "vscode": "^1.28.0",
+        "azdata": "*"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:run.preprocessor"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "run.preprocessor",
+                "title": "Run preprocessor"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "run.preprocessor",
+                "key": "Ctrl+Shift+r p"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/azdata/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "updateazdata": "curl -o ./typings/azdata.proposed.d.ts https://raw.githubusercontent.com/Microsoft/azuredatastudio/master/src/sql/azdata.proposed.d.ts"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.10.9",
+        "azdata": "^1.0.0",
+        "event-stream": "3.3.4",
+        "tslint": "^5.20.1",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.36"
+    },
+    "dependencies": {
+        "azuredatastudio-dmpwrapper": "^1.0.1",
+        "c-preprocessor": "^0.2.12"
+    }
+}
