@@ -7,6 +7,18 @@ You can download [VSIX and install it in your Azure Data Studio](c-preprocesor-0
 1. Write a T-SQL query that has some C-style macro definitions, for example:
 
 ```
+#define PI 3.14
+
+select 3*PI/4
+```
+Once you run the query using `Ctrl`+`Alt`+`F5`, the extension will replace defined constant `PI` with the value `3.14` and you will reun the following query:
+
+```
+select 3*3.14/4
+```
+
+You can also use conditional execution as it is shown in the following example:
+```
 #define DB
 #ifdef DB
 select * from sys.databases;
