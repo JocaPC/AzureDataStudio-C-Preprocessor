@@ -32,7 +32,6 @@ class RollbackQueryChange implements azdata.queryeditor.QueryEventListener {
                     document: azdata.queryeditor.QueryDocument): void {
                         
         if(type == 'queryStop' && this.query != null){
-            vscode.window.showInformationMessage('Reverting to:'+this.query);
             setText(this.query); 
             this.query = null;   
         }
@@ -59,8 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
                 let query = vscode.window.activeTextEditor.document.getText();
                 compiler.compile(query, function(err: object, result: string) {
 
-                    vscode.window.showInformationMessage('Executing:'+result);
-                    setText(result);
+                    setText('------------------------------\n--\t\tExecting query:\n------------------------------\n'+result);
 
                     let activeFilePath = vscode.window.activeTextEditor.document.uri.toString();
                     azdata.queryeditor.connect(activeFilePath, connectionId)
