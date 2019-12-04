@@ -30,6 +30,7 @@ select @@version;
 This extension will evaluate #ifdef/#else conditions and execute first or second script.
 
 2. Use **Ctrl+Alt+F5** to run the pre-processed query. This command will pre-process your query and execute it on the current active connection.
+2.1. As an alternative use **Ctrl+Alt+F6** to run the pre-processed query in a new window. This option is usefull if you processed query fails and then you need to see generated source. 
 
 ## Examples
 

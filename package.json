@@ -1,8 +1,8 @@
 {
     "name": "c-preprocesor",
-    "displayName": "C-Preprocessor",
-    "description": "Enables you to define C-style macros in your T-SQL script.",
-    "version": "0.1.2",
+    "displayName": "C-Macro preprocessor for Azure Data Studio queries",
+    "description": "Enables you to use C-style macros in your T-SQL script.",
+    "version": "0.1.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/jocapc/azuredatastudio-preprocessor"
@@ -17,7 +17,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:run.preprocessor"
+        "onCommand:run.preprocessor",
+        "onCommand:run.preprocessor.new"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -25,12 +26,20 @@
             {
                 "command": "run.preprocessor",
                 "title": "Run with C-preprocessor"
+            },
+            {
+                "command": "run.preprocessor.new",
+                "title": "Run in new window with C-preprocessor"
             }
         ],
         "keybindings": [
             {
                 "command": "run.preprocessor",
                 "key": "Ctrl+Alt+f5"
+            },
+            {
+                "command": "run.preprocessor.new",
+                "key": "Ctrl+Alt+f6"
             }
         ]
     },
